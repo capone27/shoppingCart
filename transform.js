@@ -1,7 +1,7 @@
 
-export function groupAdultsByAgeRange(arr){
-  const result = arr.filter(function(age){
-    if(age >= 21){
+function groupAdultsByAgeRange(arr) {
+  const result = arr.filter(function (age) {
+    if (age >= 21) {
       return true
     }
   })
@@ -10,3 +10,4 @@ export function groupAdultsByAgeRange(arr){
 }
 
 
+module.exports.groupAdultsByAgeRange = groupAdultsByAgeRange

@@ -1,9 +1,6 @@
 
 class ShoppingCart {
-  constructor(name, quantity, pricePerUnit) {
-    this.name = name
-    this.quantity = quantity
-    this.pricePerUnit = pricePerUnit
+  constructor() {
     this.items = []
   }
 
@@ -26,16 +23,11 @@ class ShoppingCart {
 
 
   total() {
-
-    const unitPerPrice = this.items
-      .map(unit => unit.getItems())
-      .reduce((a, b) => a   + b)
-    const quantity = this.item
-      .map(quantity => quantity.getItems())
-      .reduce((a, b) => a + b)
-    return unitPerPrice * quantity
+    return this.items.reduce(
+      (acc, value) => acc + (value.pricePerUnit * value.quantity),0)
+  
+   
 
   }
 }
 
-module.exports = ShoppingCart
